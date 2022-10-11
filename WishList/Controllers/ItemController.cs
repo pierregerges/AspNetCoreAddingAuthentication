@@ -22,7 +22,7 @@ namespace WishList.Controllers
 
         public IActionResult Index()
         { 
-            var model = _context.Items.ToList().Where(UserManager.GetUserAsync(HttpContext.User));
+            var model = _context.Items.ToList();
 
             return View("Index", model);
         }

@@ -69,7 +69,7 @@ namespace WishList.Controllers
         public IActionResult Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
-                return RedirectToAction("Login", model);
+                return View("Login", model);
 
             var result = _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false).Result;
             if (!result.Succeeded)
